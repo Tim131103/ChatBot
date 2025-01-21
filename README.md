@@ -58,3 +58,12 @@ Dieses Projekt zielt darauf ab, einen Chatbot zu entwickeln, der mit Hilfe von o
 
    python main.py
 
+## Mitwirkende
+
+- [Tim](https://github.com/Tim131103) 
+- [Lykka](https://github.com/Lykka)
+- [Jean-Luc](https://github.com/Jean-Luc)
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der Datei `LICENSE`.
