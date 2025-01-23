@@ -62,7 +62,7 @@ Dieses Projekt zielt darauf ab, einen Chatbot zu entwickeln, der mit Hilfe von o
 
 - [Tim](https://github.com/Tim131103) 
 - [Lykka](https://github.com/Lykka2)
-- [Jean-Luc](https://github.com/jean-lucleminskz7478)
+- [Jean-Luc](https://github.com/jean-lucleminsky7478)
 
 ## Lizenz
 
