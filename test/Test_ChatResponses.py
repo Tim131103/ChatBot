@@ -9,13 +9,13 @@ class TestChatResponses(unittest.TestCase):
         # Here you can create an instance of the Chatbot class.
         self.chatresponse = ChatResponses()
 
-    def test_Greeting(self):
+    def test_greeting(self):
         # Example of a test case
         # Arrange
         expected_response = "Hallo!"
 
         # Act
-        response = self.chatresponse.findChatResponse()
+        response = self.chatresponse.find_chat_response()
 
         # Assert
         self.assertEqual(response, expected_response)

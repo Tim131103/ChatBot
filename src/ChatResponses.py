@@ -1,5 +1,5 @@
 class ChatResponses:
-    def findChatResponse(intent):
+    def find_chat_response(intent):
         intent = "greeting" #Bsp. greeting ausprobieren
 
         intent_mapping = {
