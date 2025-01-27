@@ -3,21 +3,21 @@ from Chatbot import Chatbot
 
 class TestChatbot(unittest.TestCase):
     def setUp(self):
-        # Hier kannst du eine Instanz der Chatbot-Klasse erstellen.
+        # Here you can create an instance of the Chatbot class.
         self.chatbot = Chatbot()
 
     def test_example_method(self):
-        # Beispiel für einen Testfall
+        # Example of a test case
         # Arrange
-        erwartete_antwort = "Hallo, wie kann ich dir helfen?"
+        expected_response = "Hello, how can I help you?"
 
         # Act
-        antwort = self.chatbot.example_method()
+        response = self.chatbot.example_method()
 
         # Assert
-        self.assertEqual(antwort, erwartete_antwort)
+        self.assertEqual(response, expected_response)
 
-    # Weitere Testmethoden hinzufügen...
+    # Add more test methods...
 
 if __name__ == '__main__':
     unittest.main()
