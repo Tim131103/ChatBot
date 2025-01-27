@@ -1,9 +1,10 @@
 import random
 
+
 class chat_responses:
     def __init__(self):
         self.intent_mapping = {
-            #Begrüßung
+            # Begrüßung
             "greeting": ["Hallo!", "Guten Tag!"],
 
             # Verabschiedung
@@ -38,16 +39,17 @@ class chat_responses:
                 "Vielen Dank für Ihre Rückmeldung! Wir arbeiten daran, den Kundenservice zu optimieren, und schätzen Ihre Unterstützung."
             ]
         }
-    
-    
-    
+
     def find_chat_response(self, intent):
         if intent in self.intent_mapping:
             response = random.choice(self.intent_mapping[intent])
-            return response
-        else :
-            raise ValueError(f"Unknown intent: {intent}")
-        
+        else:
+            # TODO mit Error umgehen?
+            # TODO Nachricht an User, dass unknown intent
+            response = "Entschuldigung, ich habe das nicht verstanden."
+            raise KeyError(f"Unknown intent: '{intent}' not found in intent mapping.")
+        return response
+
 
 chat_response = chat_responses()
 

@@ -27,5 +27,18 @@ class test_chat_responses(unittest.TestCase):
         self.assertEqual(
             response, "Entschuldigung, ich habe das nicht verstanden.")
 
+    def test_error_intent(self):
+        # Test für einen error
+        response = self.chatresponse.find_chat_response("error")
+        self.assertEqual(
+            response, "Entschuldigung, ich habe das nicht verstanden.")
+        
+        #Verbesserung laut GPT?:
+        with self.assertRaises(KeyError) as context:
+            self.chat_response.find_chat_response("unknown_intent")
+        self.assertEqual(str(context.exception),
+                         "Unknown intent: 'unknown_intent' not found in intent mapping.")
+
+
 if __name__ == '__main__':
     unittest.main()
