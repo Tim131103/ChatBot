@@ -9,4 +9,7 @@
         "-p",
         "Test_*.py"
     ],
+    "python.analysis.extraPaths": [
+        "./Chatbot Code"
+    ],
 }
