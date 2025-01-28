@@ -8,14 +8,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+# nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
 
 class IntentRecognizer:
     def __init__(self) -> None:
-        self.lemmatizer = WordNetLemmatizer
+        self.lemmatizer = WordNetLemmatizer()
         self.stop_words = set(stopwords.words('german'))
+        self.model = None
         
     def preprocess_text(self,text):
         """
@@ -24,8 +25,8 @@ class IntentRecognizer:
         - removing of so called stopwords (i.e. 'und', 'aber', etc.)
         - lemmatize (transform words to their base form)
         """
-        tokens = word_tokenize(text.lower)
-        tokens = [word for word in tokens if word not in self.stop_words]
+        tokens = word_tokenize(text.lower())
+        tokens = [word for word in tokens if word.isalnum() and word not in self.stop_words]
         tokens = [self.lemmatizer.lemmatize(word) for word in tokens]
         print(tokens)
         return " ".join(tokens)
