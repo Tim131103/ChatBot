@@ -7,6 +7,7 @@ textblob==0.17.1
 scikit-learn==1.3.0
 tensorflow==2.14.0
 torch==2.0.1
+joblib==1.4.2 #for saving and loading the ML-model
 
 # Database
 SQLAlchemy==2.0.21
