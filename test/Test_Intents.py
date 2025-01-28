@@ -48,6 +48,9 @@ class IntentRecognizer:
         return self.model.predict([processed_text])[0]
     
 #TODO: Create Training Data
+training_data = [
+    ("text", "intent")
+]
 
 if __name__ == "__main__":
     recognizer = IntentRecognizer()
