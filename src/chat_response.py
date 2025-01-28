@@ -38,6 +38,10 @@ class chat_responses:
                 "Ihr Feedback ist uns sehr wichtig! Wir möchten die Qualität unseres Supports kontinuierlich verbessern. Bitte teilen Sie uns mit, wie wir Ihnen besser helfen können.",
                 "Vielen Dank für Ihre Rückmeldung! Wir arbeiten daran, den Kundenservice zu optimieren, und schätzen Ihre Unterstützung."
             ]
+            #Informationen über verschiedene Produkte
+            #wofür verwendet man die Roboter jeweils
+            #42 
+            #beste Programmierer der Welt
         }
 
     def find_chat_response(self, intent):
