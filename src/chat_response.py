@@ -5,13 +5,16 @@ class chat_responses:
     def __init__(self):
         self.intent_mapping = {
             # Begrüßung
-            "greeting": ["Hallo!", "Guten Tag!"],
+            "greeting": ["Hallo! Willkommen zurück! Wie kann ich Ihnen heute weiterhelfen?",
+                          "Guten Tag! Schön, dass Sie da sind. Was steht heute auf Ihrer Agenda?"],
 
             # Verabschiedung
-            "goodbye": ["Tschüß!", "Auf Wiedersehen!"],
+            "goodbye": ["Tschüß! Wir freuen uns darauf, Ihnen bald wieder zu helfen.", 
+                        "Auf Wiedersehen! Wir helfen ihnen auch gerne nächste mal bei Problemen"],
 
             # Unbekannter Intent
-            "unknown": ["Entschuldigung, ich habe das nicht verstanden."],
+            "unknown": ["Entschuldigung, ich habe das nicht ganz mitbekommen. Könnten Sie bitte mehr Details geben oder es anders formulieren?",
+                        "Es tut mir leid, ich bin mir nicht sicher, wie ich darauf reagieren soll. Vielleicht können Sie es anders ausdrücken oder uns mehr Informationen geben?"],
 
             # Spezifische Produktanfragen
             "cleanbug_problem": [
