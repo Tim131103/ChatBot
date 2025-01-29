@@ -5,6 +5,7 @@ const robot = document.getElementById('robot');
 const robotAccessory = document.getElementById('robot-accessory');
 
 function changeRobotState(state, accessory = '') {
+    console.log(`Changing robot state to: ${state} with accessory: ${accessory}`);
     robot.style.animation = `${state} 1s infinite alternate`;
     robotAccessory.style.display = accessory ? 'block' : 'none';
     robotAccessory.textContent = accessory;
@@ -13,6 +14,7 @@ function changeRobotState(state, accessory = '') {
 sendButton.addEventListener('click', () => {
     const message = userInput.value.trim();
     if (message) {
+        console.log(`User message: ${message}`);
         addMessage(message, true);
         userInput.value = '';
 
@@ -29,6 +31,7 @@ sendButton.addEventListener('click', () => {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(`Received response: ${data.response}`);
             // Bot is thinking
             changeRobotState('thinking', '?');
             setTimeout(() => {
@@ -54,4 +57,5 @@ function addMessage(message, isUser) {
     messageElement.textContent = message;
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
+    console.log(`Added message: ${message} (isUser: ${isUser})`);
 }
