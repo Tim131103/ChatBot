@@ -98,12 +98,6 @@ class chat_responses:
                 "Ihr Feedback hilft uns, unseren Service zu verbessern. Falls Sie uns direkt erreichen möchten, schreiben Sie bitte an kundensupport@bugland.de."
             ],
 
-            # Wütende Kunden
-            "angry_customer": [
-                "Es tut mir leid, dass Sie unzufrieden sind. Ich werde mein Bestes tun, um Ihnen zu helfen.",
-                "Falls Sie Ihr Anliegen mit einem Mitarbeiter besprechen möchten, kontaktieren Sie bitte unseren Support unter 040 1234567 oder kundensupport@bugland.de."
-            ],
-
             # Bestellungen & Zahlungen
             "order_problem": [
                 "Falls es ein Problem mit Ihrer Bestellung gibt, helfen wir Ihnen gerne weiter. Wenden Sie sich bitte an unseren Support unter 040 1234567 oder kundensupport@bugland.de.",
