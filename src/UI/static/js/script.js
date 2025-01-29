@@ -13,20 +13,32 @@ function changeRobotState(state, accessory = '') {
 sendButton.addEventListener('click', () => {
     const message = userInput.value.trim();
     if (message) {
+        addMessage(message, true);
+        userInput.value = '';
+
         // User is typing
         changeRobotState('reading', '📖');
-        setTimeout(() => {
+
+        // Send message to the backend
+        fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => response.json())
+        .then(data => {
             // Bot is thinking
             changeRobotState('thinking', '?');
             setTimeout(() => {
                 // Bot is responding
                 changeRobotState('responding', '💬');
-                addMessage('Ich bin der Chatbot. Wie kann ich Ihnen helfen?', false);
+                addMessage(data.response, false);
                 changeRobotState('idle');
-            }, 2000);
-        }, 1000);
-        addMessage(message, true);
-        userInput.value = '';
+            }, 1000);
+        })
+        .catch(error => console.error('Error:', error));
     }
 });
 
