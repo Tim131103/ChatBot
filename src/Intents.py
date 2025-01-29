@@ -8,9 +8,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 
-# nltk.download('punkt')
-# nltk.download('stopwords')
-# nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 class IntentRecognizer:
     def __init__(self) -> None:
@@ -28,7 +28,7 @@ class IntentRecognizer:
         tokens = word_tokenize(text.lower())
         tokens = [word for word in tokens if word.isalnum() and word not in self.stop_words]
         tokens = [self.lemmatizer.lemmatize(word) for word in tokens]
-        print(tokens)
+        # print(tokens)
         return " ".join(tokens)
     
     def train(self, training_data):
