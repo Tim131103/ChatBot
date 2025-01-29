@@ -12,6 +12,9 @@ class chat_responses:
             "goodbye": ["Tschüß! Wir freuen uns darauf, Ihnen bald wieder zu helfen.", 
                         "Auf Wiedersehen! Wir helfen ihnen auch gerne nächste mal bei Problemen"],
 
+            #TODO Text ergänzen
+            "help": ["TEXT!!!!"],
+            "capabilities": ["TEXT!!!!"],
             # Unbekannter Intent
             "unknown": ["Entschuldigung, ich habe das nicht ganz mitbekommen. Könnten Sie bitte mehr Details geben oder es anders formulieren?",
                         "Es tut mir leid, ich bin mir nicht sicher, wie ich darauf reagieren soll. Vielleicht können Sie es anders ausdrücken oder uns mehr Informationen geben?"],
@@ -46,6 +49,7 @@ class chat_responses:
             #42 
             #beste Programmierer der Welt
         }
+    #TODO launch.json "FLASK_APP": "src/UI/app.py" ?????
 
     def find_chat_response(self, intent):
         if intent in self.intent_mapping:
