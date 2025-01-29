@@ -1,4 +1,12 @@
 ChatBot.code-workspace
+src/UI/__pycache__/chat_response.cpython-313.pyc
+src/UI/__pycache__/app.cpython-313.pyc
+src/__pycache__/Intents.cpython-313.pyc
+src/__pycache__/chat_response.cpython-313.pyc
+src/__pycache__/chat_response.cpython-313.pyc
+src/__pycache__/chat_response.cpython-313.pyc
+src/__pycache__/chat_response.cpython-313.pyc
+src/__pycache__/chat_response.cpython-313.pyc
 src/__pycache__/chat_response.cpython-313.pyc
 test/__pycache__/test_chat_responses.cpython-313.pyc
 test/__pycache__/Test_Chatbot.cpython-313.pyc
