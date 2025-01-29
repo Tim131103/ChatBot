@@ -1,12 +1,17 @@
 import nltk
 import joblib 
+import numpy as np
 
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import make_pipeline
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -17,6 +22,7 @@ class IntentRecognizer:
         self.lemmatizer = WordNetLemmatizer()
         self.stop_words = set(stopwords.words('german'))
         self.model = None
+        self.best_params_ = None
         
     def preprocess_text(self,text):
         """
@@ -31,7 +37,7 @@ class IntentRecognizer:
         # print(tokens)
         return " ".join(tokens)
     
-    def train(self, training_data):
+    def train(self, training_data, test_size=0.2, random_state=42):
         """
         Training the model with given training data
         training_data: List of tupels (text, intent)
@@ -39,14 +45,52 @@ class IntentRecognizer:
         texts = [self.preprocess_text(text) for text, intent in training_data]
         intents = [intent for text, intent in training_data]
 
-        self.model = make_pipeline(CountVectorizer(), MultinomialNB())
-        self.model.fit(texts, intents)
+        X_train, X_test, y_train, y_test = train_test_split(
+            texts, intents, test_size=test_size, random_state=random_state
+        ) 
+
+        pipeline = Pipeline([
+            ('tfidf', TfidfVectorizer()),  # Einzelner Schritt
+            ('clf', MultinomialNB())       # Einzelner Schritt
+        ])
+        
+        # Hyperparameter für die Suche
+        param_grid = {
+            'tfidf__ngram_range': [(1, 1), (1, 2)],  # Unigramme oder Bigramme
+            'tfidf__max_features': [1000, 2000],      # Maximale Anzahl an Features
+            'clf__alpha': [0.1, 0.5, 1.0]            # Glättungsparameter für Naive Bayes
+        }
+
+        grid_search = GridSearchCV(
+            pipeline, param_grid, cv=5, n_jobs=-1, verbose=1
+        )
+        grid_search.fit(X_train, y_train)
+
+        self.model = grid_search.best_estimator_
+        self.best_params_ = grid_search.best_params_
+        
+        # Evaluation auf Testdaten
+        y_pred = self.model.predict(X_test)
+        print("\nKlassifikationsbericht:")
+        print(classification_report(y_test, y_pred))
+        self.plot_confusion_matrix(y_test, y_pred)
+
+    def plot_confusion_matrix(self, y_true, y_pred):
+        """Visualisiert die Konfusionsmatrix."""
+        cm = confusion_matrix(y_true, y_pred)
+        plt.figure(figsize=(10, 7))
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+        plt.xlabel('Vorhergesagte Absicht')
+        plt.ylabel('Tatsächliche Absicht')
+        plt.title('Konfusionsmatrix')
+        plt.show()
 
     # Wichtig für Chatbot Implementierung
     def predict_intent(self, text):
         if self.model is None:
             raise ValueError("Das Modell wurde noch nicht trainiert.")
         processed_text = self.preprocess_text(text)
+        # print(f"Text: {processed_text} -> Intent: {self.model.predict([processed_text])[0]} ")
         return self.model.predict([processed_text])[0]
     
     def save_model(self, filename):
@@ -60,14 +104,31 @@ class IntentRecognizer:
     
 
 training_data = [
-    # Begrüßungen
+    # Begrüßungen 
     ("hallo", "greeting"),
     ("hi", "greeting"),
     ("guten morgen", "greeting"),
     ("guten tag", "greeting"),
     ("guten abend", "greeting"),
     ("hey", "greeting"),
-    ("moin", "greeting"),  
+    ("moin", "greeting"),
+    ("hallo zusammen", "greeting"),
+    ("servus", "greeting"),
+    ("wie geht's?", "greeting"),
+    ("was geht?", "greeting"),
+    ("schönen tag noch", "greeting"),
+    ("willkommen", "greeting"),
+    ("hi there", "greeting"),
+    ("lange nicht gesehen", "greeting"),
+    ("freut mich, dich zu sehen", "greeting"),
+    ("alles klar?", "greeting"),
+    ("hallo, wie läuft's?", "greeting"),
+    ("was macht ihr?", "greeting"),
+    ("schön, dich zu treffen", "greeting"),
+    ("guten morgen allerseits", "greeting"),
+    ("hallo, wie geht es dir?", "greeting"),
+    ("guten tag, wie kann ich helfen?", "greeting"),
+    ("heyyy", "greeting"),  
 
     # Verabschiedung
     ("tschüss", "goodbye"),
@@ -75,6 +136,32 @@ training_data = [
     ("bis bald", "goodbye"),
     ("bis später", "goodbye"),
     ("bye", "goodbye"),
+    ("mach's gut", "goodbye"),
+    ("bis dann", "goodbye"),
+    ("schönen tag noch", "goodbye"),
+    ("ciao", "goodbye"),
+    ("bis zum nächsten mal", "goodbye"),
+    ("wir sehen uns", "goodbye"),
+    ("auf bald", "goodbye"),
+    ("bis zur nächsten unterhaltung", "goodbye"),
+    ("take care", "goodbye"),
+    ("schau mal wieder vorbei", "goodbye"),
+    ("hab einen schönen tag", "goodbye"),
+    ("bis gleich", "goodbye"),
+    ("bis zur nächsten woche", "goodbye"),
+    ("hab eine gute zeit", "goodbye"),
+    ("gute reise", "goodbye"),
+    ("mach's besser", "goodbye"),
+    ("ich muss jetzt gehen", "goodbye"),
+    ("wir sprechen uns später", "goodbye"),
+    ("alles gute", "goodbye"),
+    ("bis zum nächsten mal", "goodbye"),
+    ("auf ein baldiges wiedersehen", "goodbye"),
+    ("tschau", "goodbye"),
+    ("tschüssie", "goodbye"),
+    ("tschö mit ö", "goodbye"),
+    ("tschau bella", "goodbye"),
+    ("tschüssikowski", "goodbye"),
 
     # Hilfe
     ('was kannst du für mich tun?', 'help'),
@@ -527,18 +614,18 @@ training_data = [
 
 if __name__ == "__main__":
     recognizer = IntentRecognizer()
-
     recognizer.train(training_data)
-
     recognizer.save_model('intent_recognizer.pkl')
-
     recognizer.load_model('intent_recognizer.pkl')
 
     #TODO: Ersetzen mit Tests von Lykka
     test_texts = [
         "hi",
         "Kannst du mir Infos zur Windowfly geben?",
-        "Tschüss!"
+        "Tschüss!",
+        "Mein CleanBug macht seltsame Geräusche",
+        "Wie kann ich eine Rückgabe veranlassen?",
+        "Wer sind die besten Programmierer?"
     ]
 
     for text in test_texts:
