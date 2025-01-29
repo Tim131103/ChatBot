@@ -61,20 +61,20 @@ class IntentRecognizer:
 
 training_data = [
     # Begrüßungen
-    ("hallo", "begrüßung"),
-    ("hi", "begrüßung"),
-    ("guten morgen", "begrüßung"),
-    ("guten tag", "begrüßung"),
-    ("guten abend", "begrüßung"),
-    ("hey", "begrüßung"),
-    ("moin", "begrüßung"),  
+    ("hallo", "greeting"),
+    ("hi", "greeting"),
+    ("guten morgen", "greeting"),
+    ("guten tag", "greeting"),
+    ("guten abend", "greeting"),
+    ("hey", "greeting"),
+    ("moin", "greeting"),  
 
     # Verabschiedung
-    ("tschüss", "verabschiedung"),
-    ("auf wiedersehen", "verabschiedung"),
-    ("bis bald", "verabschiedung"),
-    ("bis später", "verabschiedung"),
-    ("bye", "verabschiedung"),
+    ("tschüss", "goodbye"),
+    ("auf wiedersehen", "goodbye"),
+    ("bis bald", "goodbye"),
+    ("bis später", "goodbye"),
+    ("bye", "goodbye"),
 
     # Hilfe
     ('was kannst du für mich tun?', 'help'),
