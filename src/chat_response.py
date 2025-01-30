@@ -98,11 +98,7 @@ class chat_responses:
                 "Ihr Feedback hilft uns, unseren Service zu verbessern. Falls Sie uns direkt erreichen möchten, schreiben Sie bitte an kundensupport@bugland.de."
             ],
 
-            # Bestellungen & Zahlungen
-            "order_problem": [
-                "Falls es ein Problem mit Ihrer Bestellung gibt, helfen wir Ihnen gerne weiter. Wenden Sie sich bitte an unseren Support unter 040 1234567 oder kundensupport@bugland.de.",
-                "Ich verstehe, dass das ärgerlich ist. Falls Sie Unterstützung benötigen, wenden Sie sich bitte an unseren Support unter 040 1234567 oder kundensupport@bugland.de."
-            ],
+            # Zahlungen
             "payment_issue": [
                 "Falls es Probleme mit der Zahlung gibt, prüfen Sie bitte Ihre Zahlungsmethode oder wenden Sie sich an unseren Support unter 040 1234567 oder per E-Mail an kundensupport@bugland.de.",
                 "Ich kann Ihnen helfen, falls eine Zahlung fehlgeschlagen ist. Bitte kontaktieren Sie unseren Support unter 040 1234567 oder per E-Mail an kundensupport@bugland.de."
