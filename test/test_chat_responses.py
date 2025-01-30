@@ -5,7 +5,7 @@ import random
 def mock_choice(seq):
     return seq[0]
 
-class chat_responses:
+class test_chat_responses:
     def __init__(self):
         self.intent_mapping = {
             "greeting": [
@@ -40,7 +40,7 @@ class TestChatResponses(unittest.TestCase):
         # Patch random.choice to ensure deterministic results
         self.original_choice = random.choice
         random.choice = mock_choice
-        self.chatresponse = chat_responses()
+        self.chatresponse = test_chat_responses()
 
     def tearDown(self):
         # Restore the original random.choice method
