@@ -8,7 +8,7 @@ import os
 # Add the src directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from intents import IntentRecognizer
+from Intents import IntentRecognizer
 from chat_response import chat_responses
 
 app = Flask(__name__,
