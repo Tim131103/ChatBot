@@ -1,7 +1,6 @@
 import random
 
-
-class chat_responses:
+class ChatResponses:
     def __init__(self):
         self.intent_mapping = {
             # Begrüßung
@@ -123,7 +122,7 @@ class chat_responses:
             ]
         }
 
-    #TODO launch
+    # TODO launch
     # Informationen über verschiedene Produkte
         # wofür verwendet man die Roboter jeweils
     # .json "FLASK_APP": "src/UI/app.py" ?????
@@ -135,10 +134,11 @@ class chat_responses:
             # TODO mit Error umgehen?
             # TODO Nachricht an User, dass unknown intent
             response = "Entschuldigung, ich habe das nicht verstanden. Schreibe bitte eine Mail an it_service@bugland.de"
-            raise KeyError(f"Unknown intent: '{intent}' not found in intent mapping.")
+            raise KeyError(f"Unknown intent: '{
+                           intent}' not found in intent mapping.")
         return response
 
 
-chat_response = chat_responses()
+chat_response = ChatResponses()
 
 response = chat_response.find_chat_response("greeting")
