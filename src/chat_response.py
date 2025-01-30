@@ -134,8 +134,7 @@ class ChatResponses:
             # TODO mit Error umgehen?
             # TODO Nachricht an User, dass unknown intent
             response = "Entschuldigung, ich habe das nicht verstanden. Schreibe bitte eine Mail an it_service@bugland.de"
-            raise KeyError(f"Unknown intent: '{
-                           intent}' not found in intent mapping.")
+            raise KeyError(f"Unknown intent: '{intent}' not found in intent mapping.")
         return response
 
 

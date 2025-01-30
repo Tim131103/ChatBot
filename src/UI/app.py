@@ -1,6 +1,3 @@
-from chat_response import ChatResponses
-from intents import IntentRecognizer
-from flask import Flask, render_template, request, jsonify
 import nltk
 import joblib
 import logging
@@ -9,6 +6,11 @@ import os
 
 # Add the src directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from chat_response import ChatResponses
+from intents import IntentRecognizer
+from flask import Flask, render_template, request, jsonify
+
 
 
 app = Flask(__name__,
