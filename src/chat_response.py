@@ -89,14 +89,6 @@ class ChatResponses:
                 "Falls Ihr Gerät defekt ist, können Sie es gerne zur Reparatur einsenden. Denken Sie daran, nur Originalersatzteile werden verwendet, um den Cleanbug oder andere Geräte zu reparieren."
             ],
 
-            # Kundenfeedback
-            "customer_feedback": [
-                "Ihr Feedback ist uns sehr wichtig! Wir möchten die Qualität unseres Supports kontinuierlich verbessern. Bitte teilen Sie uns mit, wie wir Ihnen besser helfen können.",
-                "Vielen Dank für Ihre Rückmeldung! Wir arbeiten daran, den Kundenservice zu optimieren, und schätzen Ihre Unterstützung.",
-                "Wir freuen uns über Ihr Feedback! Möchten Sie eine Bewertung abgeben oder Verbesserungsvorschläge mitteilen?",
-                "Ihr Feedback hilft uns, unseren Service zu verbessern. Falls Sie uns direkt erreichen möchten, schreiben Sie bitte an kundensupport@bugland.de."
-            ],
-
             # Zahlungen
             "payment_issue": [
                 "Falls es Probleme mit der Zahlung gibt, prüfen Sie bitte Ihre Zahlungsmethode oder wenden Sie sich an unseren Support unter 040 1234567 oder per E-Mail an kundensupport@bugland.de.",
