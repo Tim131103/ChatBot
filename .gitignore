@@ -1,5 +1,6 @@
 ChatBot.code-workspace
 *.pyc
+*.pkl
 src/UI/__pycache__/chat_response.cpython-313.pyc
 src/UI/__pycache__/app.cpython-313.pyc
 src/__pycache__/Intents.cpython-313.pyc
