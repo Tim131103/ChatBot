@@ -131,9 +131,7 @@ class ChatResponses:
         if intent in self.intent_mapping:
             response = random.choice(self.intent_mapping[intent])
         else:
-            # TODO mit Error umgehen?
-            # TODO Nachricht an User, dass unknown intent
-            response = "Entschuldigung, ich habe das nicht verstanden. Schreibe bitte eine Mail an it_service@bugland.de"
+            response = "Entschuldigung, ich habe das nicht verstanden. Kontaktieren Sie bitte unseren Support unter 040 1234567 oder per E-Mail an kundensupport@bugland.de."
             raise KeyError(f"Unknown intent: '{
                            intent}' not found in intent mapping.")
         return response
