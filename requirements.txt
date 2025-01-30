@@ -1,5 +1,5 @@
 # Natural Language Processing
-nltk==3.8.1
+nltk==3.9
 
 # Machine Learning
 scikit-learn==1.6.1
