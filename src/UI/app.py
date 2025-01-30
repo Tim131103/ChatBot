@@ -40,12 +40,15 @@ def chat():
             return jsonify({'error': 'Invalid input data'}), 400
 
         user_message = data['message']
+        logging.info(f"Received message: {user_message}")
         
         # Predict intent using the recognizer
         intent = recognizer.predict_intent(user_message)
+        logging.info(f"Predicted intent: {intent}")
         
         # Get response from chat_responses
         response = chat_response.find_chat_response(intent)
+        logging.info(f"Response: {response}")
         
         return jsonify({'response': response})
 
