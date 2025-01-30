@@ -516,7 +516,6 @@ training_data = [
     ('wie oft überprüft bugland ltd. die sicherheit ihrer produkte?', 'security_concerns'),
     ('was soll ich tun, wenn ich sicherheitsbedenken bezüglich eines produkts von bugland ltd. habe?', 'security_concerns'),
     ('gibt es eine hotline für sicherheitsfragen zu bugland ltd. produkten?', 'security_concerns'),
-    ('wie informiert bugland ltd. über sicherheitsupdates?', 'security_concerns'),
     ('sind die produkte von bugland ltd. gegen malware geschützt?', 'security_concerns'),
     ('was sind die sicherheitsfunktionen der produkte von bugland ltd.?', 'security_concerns'),
     ('wie kann ich bugland ltd. kontaktieren, wenn ich sicherheitsbedenken habe?', 'security_concerns'),
@@ -539,8 +538,6 @@ training_data = [
     ('wie informiert das unternehmen über sicherheitsupdates?', 'security_concerns'),
     ('sind die produkte gegen malware geschützt?', 'security_concerns'),
     ('was sind die sicherheitsfunktionen der produkte?', 'security_concerns'),
-    ('wie kann ich das unternehmen kontaktieren, wenn ich sicherheitsbedenken habe?', 'security_concerns'),
-    ('gibt es sicherheitswarnungen für bestimmte produkte?', 'security_concerns'),
     ('was macht das unternehmen, um die sicherheit seiner kunden zu gewährleisten?', 'security_concerns'),
 
     # Ultimate Answer
