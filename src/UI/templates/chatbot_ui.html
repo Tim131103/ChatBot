@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot UI</title>
+    <title>Responsive Chatbot UI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">Chatbot</div>
+    <div class="main-container">
         <div class="robot" id="robot">
             <div class="robot-accessory" id="robot-accessory"></div>
             <div class="robot-head">
@@ -18,10 +17,13 @@
             </div>
             <div class="robot-body"></div>
         </div>
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Schreiben Sie eine Nachricht...">
-            <button id="send-button">Senden</button>
+        <div class="chat-container">
+            <div class="chat-header">Chatbot</div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Schreiben Sie eine Nachricht...">
+                <button id="send-button">Senden</button>
+            </div>
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
