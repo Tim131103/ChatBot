@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
@@ -438,46 +439,6 @@ training_data = [
     ("ich bin sauer, ich möchte das produkt zurückgeben", "product_return"),
     ("das produkt ist ein reinfall, ich will es zurückgeben", "product_return"),
     ("ich bin total enttäuscht, ich möchte mein geld zurück", "product_return"),
-
-    # Customer Feedback
-    ('ich bin mit meinem kauf sehr zufrieden!', 'customer_feedback'),
-    ('das produkt hat meine erwartungen übertroffen.', 'customer_feedback'),
-    ('ich hatte probleme mit der lieferung.', 'customer_feedback'),
-    ('der kundenservice war nicht hilfreich.', 'customer_feedback'),
-    ('ich möchte eine rückerstattung für meinen artikel.', 'customer_feedback'),
-    ('die qualität des produkts ist hervorragend.', 'customer_feedback'),
-    ('ich bin enttäuscht von der verpackung.', 'customer_feedback'),
-    ('die website ist sehr benutzerfreundlich.', 'customer_feedback'),
-    ('ich würde das produkt auf jeden fall weiterempfehlen!', 'customer_feedback'),
-    ('ich habe lange auf meine bestellung gewartet.', 'customer_feedback'),
-    ('das produkt entspricht nicht der beschreibung.', 'customer_feedback'),
-    ('ich bin mit dem preis-leistungs-verhältnis zufrieden.', 'customer_feedback'),
-    ('die lieferung war schnell und zuverlässig.', 'customer_feedback'),
-    ('ich habe einen defekten artikel erhalten.', 'customer_feedback'),
-    ('die auswahl an produkten ist großartig!', 'customer_feedback'),
-    ('ich finde die rückgabebedingungen fair.', 'customer_feedback'),
-    ('ich habe gute erfahrungen mit dem kundenservice gemacht.', 'customer_feedback'),
-    ('die bestellung war einfach und unkompliziert.', 'customer_feedback'),
-    ('die farben des produkts sind nicht wie abgebildet.', 'customer_feedback'),
-    ('ich bin sehr begeistert von meinem kauf!', 'customer_feedback'),
-    ('ich habe keine bestätigung für meine bestellung erhalten.', 'customer_feedback'),
-    ('die qualität des materials ist nicht gut.', 'customer_feedback'),
-    ('ich finde die versandkosten zu hoch.', 'customer_feedback'),
-    ('ich habe das produkt innerhalb von zwei tagen erhalten.', 'customer_feedback'),
-    ('der artikel war nicht in der richtigen größe.', 'customer_feedback'),
-    ('die webseite hat während des bestellvorgangs gehakt.', 'customer_feedback'),
-    ('ich würde gerne mehr informationen zu meinem produkt erhalten.', 'customer_feedback'),
-    ('das produkt hat eine lange lebensdauer.', 'customer_feedback'),
-    ('ich bin mit der kundenbetreuung sehr zufrieden.', 'customer_feedback'),
-    ('ich habe das produkt zurückgeschickt, aber noch keine rückerstattung erhalten.', 'customer_feedback'),
-    ('die verpackung war umweltfreundlich.', 'customer_feedback'),
-    ('ich habe das produkt als geschenk gekauft und es kam gut an.', 'customer_feedback'),
-    ('der artikel war nicht verfügbar, obwohl er online angezeigt wurde.', 'customer_feedback'),
-    ('ich finde die app sehr praktisch für bestellungen.', 'customer_feedback'),
-    ('ich habe eine falsche bestellung erhalten.', 'customer_feedback'),
-    ('der artikel war genau wie beschrieben.', 'customer_feedback'),
-    ('ich werde wieder hier einkaufen!', 'customer_feedback'),
-    ('ich hatte ein problem beim bezahlen.', 'customer_feedback'),
 
     # Payment Issue
     ('ich habe ein problem mit meiner zahlung.', 'payment_issue'),
