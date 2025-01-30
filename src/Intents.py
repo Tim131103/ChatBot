@@ -479,29 +479,6 @@ training_data = [
     ('ich werde wieder hier einkaufen!', 'customer_feedback'),
     ('ich hatte ein problem beim bezahlen.', 'customer_feedback'),
 
-    # Order Problem     
-    ('ich habe ein problem mit meiner bestellung.', 'order_problem'),
-    ('meine bestellung ist noch nicht angekommen.', 'order_problem'),
-    ('was kann ich tun, wenn meine bestellung verspätet ist?', 'order_problem'),
-    ('ich habe die falsche bestellung erhalten.', 'order_problem'),
-    ('wie kann ich den status meiner bestellung überprüfen?', 'order_problem'),
-    ('was mache ich, wenn meine bestellung verloren gegangen ist?', 'order_problem'),
-    ('ich möchte meine bestellung stornieren.', 'order_problem'),
-    ('gibt es ein problem mit meiner bestellung?', 'order_problem'),
-    ('wie lange dauert es, bis ich meine bestellung erhalte?', 'order_problem'),
-    ('ich habe keine bestellbestätigung erhalten.', 'order_problem'),
-    ('wie kann ich eine reklamation für meine bestellung einreichen?', 'order_problem'),
-    ('ich möchte wissen, warum meine bestellung verzögert wird.', 'order_problem'),
-    ('was sind die häufigsten probleme mit bestellungen?', 'order_problem'),
-    ('wie kann ich meine lieferadresse für eine bestehende bestellung ändern?', 'order_problem'),
-    ('ich habe ein problem mit der zahlung meiner bestellung.', 'order_problem'),
-    ('kann ich meine bestellung nachträglich ändern?', 'order_problem'),
-    ('ich habe ein defektes produkt in meiner bestellung erhalten.', 'order_problem'),
-    ('wie kann ich den kundenservice zu meiner bestellung kontaktieren?', 'order_problem'),
-    ('wo finde ich informationen zu meiner bestellung?', 'order_problem'),
-    ('gibt es eine möglichkeit, meine bestellung zu verfolgen?', 'order_problem'),
-    ('ich habe versehentlich die falsche menge bestellt.', 'order_problem'),
-
     # Payment Issue
     ('ich habe ein problem mit meiner zahlung.', 'payment_issue'),
     ('meine zahlung wurde nicht akzeptiert.', 'payment_issue'),
@@ -539,7 +516,6 @@ training_data = [
     ('wie oft überprüft bugland ltd. die sicherheit ihrer produkte?', 'security_concerns'),
     ('was soll ich tun, wenn ich sicherheitsbedenken bezüglich eines produkts von bugland ltd. habe?', 'security_concerns'),
     ('gibt es eine hotline für sicherheitsfragen zu bugland ltd. produkten?', 'security_concerns'),
-    ('wie informiert bugland ltd. über sicherheitsupdates?', 'security_concerns'),
     ('sind die produkte von bugland ltd. gegen malware geschützt?', 'security_concerns'),
     ('was sind die sicherheitsfunktionen der produkte von bugland ltd.?', 'security_concerns'),
     ('wie kann ich bugland ltd. kontaktieren, wenn ich sicherheitsbedenken habe?', 'security_concerns'),
@@ -562,8 +538,6 @@ training_data = [
     ('wie informiert das unternehmen über sicherheitsupdates?', 'security_concerns'),
     ('sind die produkte gegen malware geschützt?', 'security_concerns'),
     ('was sind die sicherheitsfunktionen der produkte?', 'security_concerns'),
-    ('wie kann ich das unternehmen kontaktieren, wenn ich sicherheitsbedenken habe?', 'security_concerns'),
-    ('gibt es sicherheitswarnungen für bestimmte produkte?', 'security_concerns'),
     ('was macht das unternehmen, um die sicherheit seiner kunden zu gewährleisten?', 'security_concerns'),
 
     # Ultimate Answer
