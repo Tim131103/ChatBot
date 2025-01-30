@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
-from customer import Customer  # Now import should work
+from Customer import Customer  # Now import should work
 
 class TestCustomer(unittest.TestCase):
     def setUp(self) -> None:
