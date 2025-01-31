@@ -129,7 +129,13 @@ training_data = [
     ("guten morgen allerseits", "greeting"),
     ("hallo, wie geht es dir?", "greeting"),
     ("guten tag, wie kann ich helfen?", "greeting"),
-    ("heyyy", "greeting"),  
+    ("heyyy", "greeting"),
+    ("hallo, schön dich zu sehen", "greeting"),
+    ("moin moin", "greeting"),
+    ("grüß dich", "greeting"),
+    ("guten tag, wie kann ich dir helfen?", "greeting"),
+    ("hey, alles klar?", "greeting"),
+    ("servus, wie läuft's?", "greeting"),
 
     # Verabschiedung
     ("tschüss", "goodbye"),
@@ -523,6 +529,16 @@ training_data = [
     ('was ist der grund für unsere existenz?', 'ultimate_answer'),
     ('was ist die ultimative lösung?', 'ultimate_answer'),
     ('was ist die wichtigste antwort, die ich wissen sollte?', 'ultimate_answer'),
+    ("was ist der sinn des universums?", 'ultimate_answer'),
+    ("gibt es eine antwort auf alle fragen?", 'ultimate_answer'),
+    ("was ist die universelle wahrheit?", 'ultimate_answer'),
+    ("kannst du das geheimnis des lebens lüften?", 'ultimate_answer'),
+    ("was ist die letzte erkenntnis?", 'ultimate_answer'),
+    ("wie lautet die antwort auf alles?", 'ultimate_answer'),
+    ("was ist der schlüssel zur existenz?", 'ultimate_answer'),
+    ("kannst du die große frage beantworten?", 'ultimate_answer'),
+    ("was ist das ultimative ziel des lebens?", 'ultimate_answer'),
+    ("gibt es eine allumfassende antwort?", 'ultimate_answer'),
 
     # Best Programmers
     ('wer sind die besten programmierer aller zeiten?', 'best_programmers'),
@@ -545,6 +561,16 @@ training_data = [
     ('wer sind die besten programmierer in der gaming-industrie?', 'best_programmers'),
     ('wer sind die besten programmierer in der webentwicklung?', 'best_programmers'),
     ('wer sind die besten programmierer in der künstlichen intelligenz?', 'best_programmers'),
+    ("wer sind die pioniere der programmierung?", 'best_programmers'),
+    ("welche programmierer haben die tech-branche geprägt?", 'best_programmers'),
+    ("nenne mir berühmte programmierer der geschichte.", 'best_programmers'),
+    ("wer hat die ersten programmiersprachen entwickelt?", 'best_programmers'),
+    ("wer sind die einflussreichsten entwickler?", 'best_programmers'),
+    ("welche programmierer sind für open-source bekannt?", 'best_programmers'),
+    ("wer hat revolutionäre algorithmen erfunden?", 'best_programmers'),
+    ("wer sind die besten programmierer für künstliche intelligenz?", 'best_programmers'),
+    ("wer hat die grundlagen der informatik gelegt?", 'best_programmers'),
+    ("nenne mir programmierer mit bedeutenden awards.", 'best_programmers'),
 ]
 
 if __name__ == "__main__":
