@@ -114,17 +114,10 @@ class ChatResponses:
             ]
         }
 
-    # TODO launch
-    # Informationen über verschiedene Produkte
-        # wofür verwendet man die Roboter jeweils
-    # .json "FLASK_APP": "src/UI/app.py" ?????
-
     def find_chat_response(self, intent):
         if intent in self.intent_mapping:
             response = random.choice(self.intent_mapping[intent])
         else:
-            # TODO mit Error umgehen?
-            # TODO Nachricht an User, dass unknown intent
             response = "Entschuldigung, ich habe das nicht verstanden. Schreibe bitte eine Mail an it_service@bugland.de"
             raise KeyError(f"Unknown intent: '{intent}' not found in intent mapping.")
         return response
