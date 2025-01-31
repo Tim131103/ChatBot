@@ -10,6 +10,7 @@
         "Test_*.py"
     ],
     "python.analysis.extraPaths": [
-        "./Chatbot Code"
+        "./Chatbot Code",
+        "./src/UI"
     ],
 }

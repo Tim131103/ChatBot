@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .login-header {
+            font-size: 24px;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .login-button:hover {
+            background-color: #e91e63;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <section class="login-container">
+            <h1 class="login-header">Login</h1>
+            <form action="{{ url_for('login') }}" method="POST">
+                <input type="text" name="name" class="login-input" placeholder="Name" required>
+                <input type="text" name="customer_id" class="login-input" placeholder="Customer ID" required>
+                <input type="text" name="customer_status" class="login-input" placeholder="Customer Status" required>
+                <input type="email" name="email" class="login-input" placeholder="Email" required>
+                <input type="tel" name="phone_number" class="login-input" placeholder="Phone Number" required>
+                <input type="date" name="birth_date" class="login-input" placeholder="Birth Date" required>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
