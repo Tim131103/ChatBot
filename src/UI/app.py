@@ -21,7 +21,7 @@ def create_app():
     app.secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')
 
     # Database configuration
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Lausemaus13!@localhost:5432/customer_chat_db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tim131103@localhost:5432/customer_chat_db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Initialize SQLAlchemy with app
