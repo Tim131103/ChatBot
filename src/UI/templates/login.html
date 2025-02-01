@@ -6,17 +6,24 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            position: relative; /* Ensure relative positioning */
+        }
+
         .login-container {
             width: 100%;
-            max-width: 400px;
-            margin: auto;
+            max-width: 450px;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
             text-align: center;
-            position: relative;
-            z-index: 10;
+            z-index: 1; /* Ensure it's on top */
         }
 
         .login-header {
@@ -26,15 +33,17 @@
         }
 
         .login-input {
-            width: 100%;
+            width: 95%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 10px auto;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
             outline: none;
             transition: background-color 0.3s ease;
+            display: block;
+            pointer-events: auto; /* Ensure mouse events are enabled */
         }
 
         .login-input:focus {

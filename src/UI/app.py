@@ -1,7 +1,7 @@
 import logging
 import os
 import sys
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 # Add the src directory to the Python path
@@ -17,7 +17,7 @@ def create_app():
     # Initialize Flask app
     app = Flask(__name__, template_folder='templates', static_folder='static')
 
-    # Secret key for session management
+    # Secret key for session management (not used here)
     app.secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')
 
     # Database configuration
@@ -37,7 +37,7 @@ def create_app():
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    @app.route('/login', methods=['GET', 'POST'])
+    @app.route('/', methods=['GET', 'POST'])
     def login():
         if request.method == 'POST':
             # Save customer information to the database
@@ -52,15 +52,13 @@ def create_app():
             db.session.add(customer)
             db.session.commit()
 
-            # Log the user in without checking credentials
-            session['logged_in'] = True
-            return redirect(url_for('home'))
+            # Redirect to chatbot UI after successful login
+            return redirect(url_for('chatbot_ui'))
         return render_template('login.html')
 
-    @app.route('/')
-    def home():
-        if not session.get('logged_in'):
-            return redirect(url_for('login'))
+    @app.route('/chatbot')
+    def chatbot_ui():
+        # Render the chatbot UI after login
         return render_template('chatbot_ui.html')
 
     @app.route('/api/chat', methods=['POST'])
