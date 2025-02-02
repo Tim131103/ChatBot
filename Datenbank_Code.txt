@@ -1,3 +1,6 @@
+
+Wir haben die Datenbank Local in Postgres SQL gemacht.
+
 CREATE DATABASE customer_chat_db;
 
 CREATE TABLE customers (
