@@ -11,7 +11,7 @@ seaborn==0.13.2
 SQLAlchemy==2.0.21
 
 # Web Frameworks
-Flask==3.1.0
+Flask==3.1.1
 
 # API Integration
 Flask-RESTful==0.3.9
