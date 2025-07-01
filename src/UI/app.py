@@ -102,4 +102,5 @@ if __name__ == "__main__":
     app = create_app()
     with app.app_context():
         db.create_all()  # Create tables if they don't exist
-    app.run(debug=True)
+    debug_mode = os.environ.get('FLASK_ENV', 'production') == 'development'
+    app.run(debug=debug_mode)
